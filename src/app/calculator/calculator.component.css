@@ -1,0 +1,16 @@
+.btn{
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 35px;
+}
+
+.btn-blue{
+    background-color: #5BC0DE;
+    color: white;
+}
+
+.btn-green{
+    background-color: #5CB85C;
+    color: white;
+}

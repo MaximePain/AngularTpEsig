@@ -1,0 +1,27 @@
+<h1>Formulaire: </h1>
+
+<div class="m-2">
+    <strong class="me-2">Civilité: </strong>
+
+    <input class="form-check-input" name="civiliteRadio" type="radio" id="mrRadio" checked (change)="updateRadio('Mr')">
+    <label for="mrRadio">Mr</label>
+
+    <input class="form-check-input ms-2" name="civiliteRadio" type="radio" id="mmeRadio" (change)="updateRadio('Mme')">
+    <label for="mmeRadio">Mme</label>
+
+    <br>
+
+    <p class="font-weight-bold mb-0 mt-3">Nom:</p>
+    <input type="text" placeholder="Nom" #nomInput (keyup)="updateNom(nomInput.value)">
+
+    <p class="font-weight-bold mb-0 mt-3">Prénom:</p>
+    <input type="text" placeholder="Prénom" #prenomInput (keyup)="updatePrenom(prenomInput.value)">
+
+    <p [hidden]="!nom && !prenom">Bienvenue {{civilite}} {{prenom}} {{nom | uppercase}}</p>
+    
+    <p class="font-weight-bold mb-0 mt-3">Age: </p>
+    <input type="text" placeholder="Age" #ageInput (keyup)="updateAge(ageInput.value)">
+
+
+    <p [hidden]="!majeur || !age">Ah, je vois que vous êtes {{majeur}} puisque vous avez {{age}} ans</p>
+</div>

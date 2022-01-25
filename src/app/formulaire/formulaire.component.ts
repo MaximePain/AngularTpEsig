@@ -5,38 +5,14 @@ import { Component, OnInit } from '@angular/core';
 	templateUrl: './formulaire.component.html',
 	styleUrls: ['./formulaire.component.css']
 })
-export class FormulaireComponent implements OnInit {
+export class FormulaireComponent {
 
 	constructor() { }
 
 	nom = "";
 	prenom = "";
 	majeur = "";
-	age = "";
+	age!: Number;
 	civilite = "Mr";
-
-	ngOnInit(): void {
-	}
-
-	updateNom(nom: string){
-		this.nom = nom;
-	}
-
-	updatePrenom(prenom: string){
-		this.prenom = prenom;
-	}
-
-	updateAge(age: string){
-		this.age = age;
-		let ageInt = parseInt(age);
-		if(ageInt >= 18)
-			this.majeur = "majeur";
-		else
-			this.majeur = "mineur";
-	}
-
-	updateRadio(civilite: string){
-		this.civilite = civilite;
-	}
 
 }

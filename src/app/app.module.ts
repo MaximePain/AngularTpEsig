@@ -7,13 +7,19 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { FormsModule } from '@angular/forms';
+import { MessagerieComponent } from './messagerie/messagerie.component';
+import { MessagerieListComponent } from './messagerie-list/messagerie-list.component';
+import { MessagerieFormComponent } from './messagerie-form/messagerie-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalculatorComponent,
     FormulaireComponent,
-    AccueilComponent
+    AccueilComponent,
+    MessagerieComponent,
+    MessagerieListComponent,
+    MessagerieFormComponent
   ],
   imports: [
     BrowserModule,

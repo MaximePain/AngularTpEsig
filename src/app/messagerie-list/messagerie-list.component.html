@@ -1,0 +1,11 @@
+<div class="msgList">
+    <div class="headerMsgList">
+        <strong class="float-left me-4">Liste des messages</strong>
+        <button class="btn btn-primary">Nouveau message</button>
+    </div>
+    <div *ngFor="let message of messages" class="msgDiv">
+        <p>{{message.objet}}</p>
+        <p>Envoyé par: {{message.sender}}</p>
+        <p>Le: {{message.dateEnvoi}} à </p>
+    </div>
+</div>

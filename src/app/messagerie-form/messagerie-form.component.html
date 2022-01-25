@@ -1,0 +1,40 @@
+<div class="messagerieFormMain">
+    <h3>Message de test</h3>
+    <div class="ms-4 mb-4">
+        <div class="row mb-2">
+            <div class="col-2"><label class="float-end" for="">De: </label></div>
+            <div class="col-10">
+                <input *ngIf="newMessage else senderMail" class="form-control" type="text" placeholder="Adresse mail de l'envoyeur" [(ngModel)]="sender">
+                <ng-template #senderMail class="infoHeadMessage">
+                    {{message.sender}}
+                </ng-template>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-2"><label class="float-end" for="">A: </label></div>
+            <div class="col-10">
+                <input *ngIf="newMessage else receiverMail" class="form-control" type="text" placeholder="Adresse mail du receveur" [(ngModel)]="receiver">
+                <ng-template #receiverMail class="infoHeadMessage">
+                    {{message.receiver}}
+                </ng-template>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-2"><label class="float-end" for="">Objet: </label></div>
+            <div class="col-10">
+                <input *ngIf="newMessage else objetMessage" class="form-control" type="text" placeholder="Objet du message" [(ngModel)]="objet">
+                <ng-template #objetMessage class="infoHeadMessage">
+                    {{message.objet}}
+                </ng-template>
+            </div>
+        </div>
+    </div>
+
+    <p>Contenu du message:</p>
+    <textarea [disabled]="!newMessage" class="w-100 form-control mb-2" rows="5" [(ngModel)]="contenu">
+
+    </textarea>
+    <button *ngIf="newMessage" class="btn btn-success float-end m-1" (click)="envoyerMessage()">Envoyer</button>
+    <button *ngIf="newMessage" class="btn btn-warning float-end m-1" (click)="abandonnerMessage()">Abandonner</button>
+    <button *ngIf="!newMessage" class="btn btn-danger float-end m-1" (click)="supprimerMessage()">Supprimer le message</button>
+</div>

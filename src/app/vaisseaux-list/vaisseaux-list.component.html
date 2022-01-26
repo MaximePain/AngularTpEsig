@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="mb-2">
+        <h1>Lien avec WebApi</h1>
+        <span>(peut prendre quelques secondes pour charger les vaisseaux)</span>
+    </div>
+    <div class="row">
+        <div class="col-auto">
+            <div class="msgList">
+                <div class="headerMsgList">
+                    <strong class="float-left me-4">Liste des vaisseaux</strong>
+                </div>
+                <div *ngFor="let vaisseau of vaisseaux | async" class="vaisseauDiv" (click)="clickDiv(vaisseau)">
+                    <p class="objetMsgList">{{vaisseau.name}}</p>
+                    <p class="senderMsgList">Modèle: {{vaisseau.model}}</p>
+                    <p class="dateMsgList">Classe: {{vaisseau.vehicle_class}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-auto">
+            <app-vaisseaux-data
+            [vaisseau]="vaisseau"
+            >
+
+            </app-vaisseaux-data>
+        </div>
+    </div>
+</div>

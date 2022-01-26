@@ -9,6 +9,9 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { FormsModule } from '@angular/forms';
 import { MessagerieListComponent } from './messagerie-list/messagerie-list.component';
 import { MessagerieFormComponent } from './messagerie-form/messagerie-form.component';
+import { VaisseauxListComponent } from './vaisseaux-list/vaisseaux-list.component';
+import { VaisseauxDataComponent } from './vaisseaux-data/vaisseaux-data.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { MessagerieFormComponent } from './messagerie-form/messagerie-form.compo
     FormulaireComponent,
     AccueilComponent,
     MessagerieListComponent,
-    MessagerieFormComponent
+    MessagerieFormComponent,
+    VaisseauxListComponent,
+    VaisseauxDataComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,51 @@
+<div *ngIf="vaisseau" class="vaisseauInfos">
+    <h3>{{vaisseau.name}}</h3>
+    <p class="dataTitre">Informations génériques</p>
+    <p class="typeDataP"><span class="typeData">Modèle: </span>
+        <span>{{vaisseau.model}}</span>
+    </p>
+
+    <p class="typeDataP"><span class="typeData">Classe: </span>
+        <span>{{vaisseau.vehicle_class}}</span>
+    </p>
+
+    <p class="typeDataP"><span class="typeData">Constructeur: </span>
+        <span>{{vaisseau.manufacturer}}</span>
+    </p>
+
+    <p class="typeDataP"><span class="typeData">Cout de construction: </span>
+        <span>{{vaisseau.cost_in_credits}}</span>
+    </p>
+
+    <p class="dataTitre">Dimensions</p>
+    <p class="typeDataP"><span class="typeData">Longueur: </span>
+        <span>{{vaisseau.length}}</span>
+    </p>
+
+    <p class="typeDataP"><span class="typeData">Equipage: </span>
+        <span>{{vaisseau.crew}}</span>
+    </p>
+
+    <p class="typeDataP"><span class="typeData">Passagers: </span>
+        <span>{{vaisseau.passengers}}</span>
+    </p>
+
+    <p class="typeDataP"><span class="typeData">Capacité de cargo: </span>
+        <span>{{vaisseau.cargo_capacity}}</span>
+    </p>
+
+    <p class="dataTitre">Propulsion</p>
+    <p class="typeDataP"><span class="typeData">Vitesse: </span>
+        <span>-</span>
+    </p>
+
+    <p class="typeDataP"><span class="typeData">Vitesse atmosphérique: </span>
+        <span>{{vaisseau.max_atmosphering_speed}}</span>
+    </p>
+
+    <p class="typeDataP"><span class="typeData">Facteur d'hyperpropulsion: </span>
+        <span>-</span>
+    </p>
+
+
+</div>

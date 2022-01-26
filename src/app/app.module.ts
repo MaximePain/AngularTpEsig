@@ -7,7 +7,6 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { FormsModule } from '@angular/forms';
-import { MessagerieComponent } from './messagerie/messagerie.component';
 import { MessagerieListComponent } from './messagerie-list/messagerie-list.component';
 import { MessagerieFormComponent } from './messagerie-form/messagerie-form.component';
 
@@ -17,7 +16,6 @@ import { MessagerieFormComponent } from './messagerie-form/messagerie-form.compo
     CalculatorComponent,
     FormulaireComponent,
     AccueilComponent,
-    MessagerieComponent,
     MessagerieListComponent,
     MessagerieFormComponent
   ],

@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { MessagerieServiceService } from '../messagerie-service.service';
 import { Message } from '../models/Message';
 
@@ -9,8 +10,14 @@ import { Message } from '../models/Message';
 })
 export class MessagerieFormComponent implements OnInit {
 
-	newMessage: Boolean = true;
+	@Input() newMessage!: Boolean;
 	@Input() message!: Message;
+	@Output() notifyDeleteMsg = new EventEmitter();
+
+	email = new FormControl('',[
+		Validators.required,
+		Validators.email
+	]);
 
 	sender!: string;
 	receiver!: string;
@@ -32,7 +39,9 @@ export class MessagerieFormComponent implements OnInit {
 	}
 
 	supprimerMessage(){
-		
+		this.messagerieService.deleteMessage(this.message);
+		this.clearValues();
+		this.notifyDeleteMsg.emit();
 	}
 
 	clearValues(){

@@ -1,3 +1,8 @@
 .messagerieFormMain{
     width: 500px;
 }
+
+.infoHeadMessage{
+    color: rgb(112, 112, 112);
+    font-style: italic;
+}

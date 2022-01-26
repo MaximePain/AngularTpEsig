@@ -9,11 +9,18 @@ import { Message } from '../models/Message';
 })
 export class MessagerieListComponent implements OnInit {
 
+	newMessage = true;
+	message!: Message;
+
 	constructor(private messagerieService: MessagerieServiceService) {
 		
 	}
+	
 
 	messages: Message[] = [];
+	msgSelectedId: Number = -1;
+
+	
 
 	ngOnInit(): void {
 		this.getMessagesList();
@@ -21,6 +28,17 @@ export class MessagerieListComponent implements OnInit {
 
 	getMessagesList(){
 		this.messages = this.messagerieService.getMessagesList();
+	}
+
+	clickDiv(message: Message){
+		this.msgSelectedId = message.id;
+		this.message = message;
+		this.newMessage = false;
+	}
+
+	newMsg(){
+		this.msgSelectedId = -1;
+		this.newMessage = true;
 	}
 
 }

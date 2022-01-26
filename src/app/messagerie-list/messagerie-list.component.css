@@ -1,7 +1,12 @@
+.headerMsgList{
+    border-bottom: 1px solid #bbb;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
 .msgList{
     border: 1px solid #bbb;
-    padding: 10px;
-    background-color: #fafafa;
+    border-bottom: unset;
 }
 
 .btnNouveauMsg{
@@ -9,4 +14,37 @@
     color: white;
     border: 1px solid #bbb;
     border-radius: 4px;
+}
+
+.msgDiv{
+    border-bottom: 1px solid #bbb;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.msgDiv:hover{
+    background-color: rgb(175, 175, 255);
+    color: black;
+}
+
+.msgDiv p {
+    margin: unset;
+    font-size: 13px;
+}
+
+.objetMsgList{
+    font-size: 20px !important;
+}
+
+/*.dateMsgList{
+
+}
+
+.senderMsgList{
+
+}*/
+
+.blueBack{
+    background-color: rgb(66, 66, 255);
+    color: white;
 }

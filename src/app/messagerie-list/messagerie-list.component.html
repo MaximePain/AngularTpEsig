@@ -1,11 +1,30 @@
-<div class="msgList">
-    <div class="headerMsgList">
-        <strong class="float-left me-4">Liste des messages</strong>
-        <button class="btn btn-primary">Nouveau message</button>
+<div class="container-fluid">
+    <div class="mb-2">
+        <h1>ESIGTweet</h1>
+        <span>Mini service de messagerie</span>
     </div>
-    <div *ngFor="let message of messages" class="msgDiv">
-        <p>{{message.objet}}</p>
-        <p>Envoyé par: {{message.sender}}</p>
-        <p>Le: {{message.dateEnvoi}} à </p>
+    <div class="row">
+        <div class="col-auto">
+            <div class="msgList">
+                <div class="headerMsgList">
+                    <strong class="float-left me-4">Liste des messages</strong>
+                    <button class="btn btn-primary" (click)="newMsg()">Nouveau message</button>
+                </div>
+                <div *ngFor="let message of messages" class="msgDiv" (click)="clickDiv(message)" [class.blueBack]="message.id == msgSelectedId">
+                    <p class="objetMsgList">{{message.objet}}</p>
+                    <p class="senderMsgList">Envoyé par: {{message.sender}}</p>
+                    <p class="dateMsgList">Le: {{message.dateEnvoi | date:'dd/MM/yy'}} à {{message.dateEnvoi | date:'HH:mm'}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-auto">
+            <app-messagerie-form
+            [message]="message"
+            [newMessage]="newMessage"
+            (notifyDeleteMsg)="newMsg()"
+            >
+
+            </app-messagerie-form>
+        </div>
     </div>
 </div>

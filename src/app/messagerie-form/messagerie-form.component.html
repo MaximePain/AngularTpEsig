@@ -5,8 +5,8 @@
             <div class="col-2"><label class="float-end" for="">De: </label></div>
             <div class="col-10">
                 <input *ngIf="newMessage else senderMail" class="form-control" type="text" placeholder="Adresse mail de l'envoyeur" [(ngModel)]="sender">
-                <ng-template #senderMail class="infoHeadMessage">
-                    {{message.sender}}
+                <ng-template #senderMail>
+                    <span class="infoHeadMessage">{{message.sender}}</span>
                 </ng-template>
             </div>
         </div>
@@ -14,8 +14,8 @@
             <div class="col-2"><label class="float-end" for="">A: </label></div>
             <div class="col-10">
                 <input *ngIf="newMessage else receiverMail" class="form-control" type="text" placeholder="Adresse mail du receveur" [(ngModel)]="receiver">
-                <ng-template #receiverMail class="infoHeadMessage">
-                    {{message.receiver}}
+                <ng-template #receiverMail>
+                    <span class="infoHeadMessage">{{message.receiver}}</span>
                 </ng-template>
             </div>
         </div>
@@ -23,17 +23,21 @@
             <div class="col-2"><label class="float-end" for="">Objet: </label></div>
             <div class="col-10">
                 <input *ngIf="newMessage else objetMessage" class="form-control" type="text" placeholder="Objet du message" [(ngModel)]="objet">
-                <ng-template #objetMessage class="infoHeadMessage">
-                    {{message.objet}}
+                <ng-template #objetMessage>
+                    <span class="infoHeadMessage">{{message.objet}}</span>
                 </ng-template>
             </div>
         </div>
     </div>
 
     <p>Contenu du message:</p>
-    <textarea [disabled]="!newMessage" class="w-100 form-control mb-2" rows="5" [(ngModel)]="contenu">
-
+    <textarea *ngIf="newMessage else textareaContenu" class="w-100 form-control mb-2" rows="5" [(ngModel)]="contenu">
     </textarea>
+
+    <ng-template #textareaContenu>
+        <textarea disabled class="w-100 form-control mb-2 infoHeadMessage" rows="5" [(ngModel)]="message.contenu">
+        </textarea>
+    </ng-template>
     <button *ngIf="newMessage" class="btn btn-success float-end m-1" (click)="envoyerMessage()">Envoyer</button>
     <button *ngIf="newMessage" class="btn btn-warning float-end m-1" (click)="abandonnerMessage()">Abandonner</button>
     <button *ngIf="!newMessage" class="btn btn-danger float-end m-1" (click)="supprimerMessage()">Supprimer le message</button>
